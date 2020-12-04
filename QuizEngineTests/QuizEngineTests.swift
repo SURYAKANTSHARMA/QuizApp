@@ -8,26 +8,45 @@
 import XCTest
 @testable import QuizEngine
 
-class QuizEngineTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class QuizFlowTests: XCTestCase {
+     
+    func test_start_withNoQuestion() {
+        let router = RouterSpy()
+        let sut = Flow(questions: [], router: router)
+        
+        sut.start()
+        
+        XCTAssertEqual(router.routerdQuestionCount, 0)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    
+    func test_start_withOneQuestion_routeToQuestion() {
+        let router = RouterSpy()
+        let sut = Flow(questions: ["Q1"], router: router)
+        
+        sut.start()
+        
+        XCTAssertEqual(router.routerdQuestionCount, 1)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    func test_start_withOneQuestion_routeToCorrectQuestions() {
+        let router = RouterSpy()
+        let sut = Flow(questions: ["Q1"], router: router)
+        
+        sut.start()
+        
+        XCTAssertEqual(router.routedQuestion, "Q1")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    
+    class RouterSpy: Router {
+        var routerdQuestionCount: Int = 0
+        var routedQuestion: String? = nil
+        
+        func routeTo(question: String) {
+            routerdQuestionCount += 1
+            routedQuestion = question
         }
     }
-
 }
