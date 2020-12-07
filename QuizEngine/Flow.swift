@@ -17,6 +17,7 @@ class Flow {
     private let router: Router
     private var questions: [String]
     private var results: [String: String] = [:]
+    
     init(questions: [String], router: Router) {
         self.router = router
         self.questions = questions
@@ -42,8 +43,8 @@ class Flow {
                 let nextQuestion = self.questions[nextQuestionIndex]
                 self.router.routeTo(question: nextQuestion, answerCallback: self.routeNext(from: nextQuestion))
             } else {
-                .//    self.router.routeTo(result: self.results)
+                  self.router.routeTo(result: self.results)
             }
          }
-  }
+     }
 }

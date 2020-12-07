@@ -92,12 +92,19 @@ class QuizFlowTests: XCTestCase {
         router.answerCallback("A2")
         XCTAssertEqual(router.result, ["Q1": "A1", "Q2": "A2"])
     }
+    func test_start_withTwoQestion_answerOneQuestion_doesNotRouteResult() {
+        let sut = makeSUT(questions: ["Q1", "Q2"])
+        sut.start()
+        router.answerCallback("A1")
+        XCTAssertNil(router.result)
+    }
     
     class RouterSpy: Router {
         
         var routedQuestions: [String] = []
         var answerCallback: Router.AnswerCallback = { _ in }
         var result: [String: String]? = nil
+        
         func routeTo(question: String, answerCallback:  @escaping (String)-> Void) {
             routedQuestions.append(question)
             self.answerCallback = answerCallback
@@ -105,7 +112,6 @@ class QuizFlowTests: XCTestCase {
         
         func routeTo(result: [String : String]) {
             self.result = result
-       }
-        
+        }
     }
 }
