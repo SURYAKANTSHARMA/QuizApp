@@ -30,6 +30,7 @@
                     <rect key="frame" x="8" y="92.5" width="398" height="761.5"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Rpr-43-Ekg"/>
+                        <outlet property="delegate" destination="-1" id="6k3-gS-kui"/>
                     </connections>
                 </tableView>
             </subviews>
@@ -43,7 +44,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nPL-m0-4nH" secondAttribute="trailing" constant="8" id="nFc-xw-kz8"/>
                 <constraint firstItem="nPL-m0-4nH" firstAttribute="top" secondItem="4ll-T3-bus" secondAttribute="bottom" constant="8" id="zUd-pT-NZb"/>
             </constraints>
-            <point key="canvasLocation" x="95.652173913043484" y="31.473214285714285"/>
+            <point key="canvasLocation" x="433" y="82"/>
         </view>
     </objects>
     <resources>
