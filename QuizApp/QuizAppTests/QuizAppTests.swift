@@ -25,7 +25,7 @@ class QuizViewControllerTests: XCTestCase {
     }
     
     
-    func test_optionSelected_withTwoOptions_notifiesDelegatesWhenSelectionChanges() {
+    func test_optionSelected_withMultipleSelectionEnabled_notifiesDelegatesSelection() {
         var answer = [String]()
         let sut = makeSUT(options: ["A1", "A2"]) { ans in
             answer = ans
@@ -34,16 +34,18 @@ class QuizViewControllerTests: XCTestCase {
         XCTAssertEqual(answer, ["A1"])
         
         sut.tableView.select(row: 1)
-        XCTAssertEqual(answer, ["A2"])
+        XCTAssertEqual(answer, ["A1", "A2"])
     }
     
-    func test_optionSelected_withMultipleSelectionEnabled_notifiesDelegatesWhenSelectionChanges() {
+    func test_optionDeselected_withMultipleSelectionEnabled_notifiesDelegatesSelection() {
         var answer = [String]()
         let sut = makeSUT(options: ["A1", "A2"]) { ans in
             answer = ans
         }
         sut.tableView.select(row: 0)
         XCTAssertEqual(answer, ["A1"])
+        
+        sut.tableView.deSelect(row: 0)
         
         sut.tableView.select(row: 1)
         XCTAssertEqual(answer, ["A2"])
@@ -69,6 +71,13 @@ private extension UITableView {
     
     func select(row: Int) {
         let indexPath = IndexPath(row: row, section: 0)
+        self.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         self.delegate?.tableView?(self, didSelectRowAt: indexPath)
+    }
+    
+    func deSelect(row: Int) {
+        let indexPath = IndexPath(row: row, section: 0)
+        self.deselectRow(at: indexPath, animated: false)
+        self.delegate?.tableView?(self, didDeselectRowAt: indexPath)
     }
 }

@@ -27,6 +27,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         headerLabel.text = question
+        tableView.allowsMultipleSelection = true 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +47,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         return UITableViewCell(style: .default, reuseIdentifier: "Cell")
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selection?([options[indexPath.row]])
+        let indexes = tableView.indexPathsForSelectedRows?.compactMap { options[$0.row] } ?? []
+        
+        selection?(indexes)
     }
 }
