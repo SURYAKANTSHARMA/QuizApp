@@ -24,12 +24,28 @@ class QuizViewControllerTests: XCTestCase {
         XCTAssertEqual(makeSUT(question: "Q1", options: ["A1", "A2"]).tableView.title(at: 1), "A2")
     }
     
+    func test_optionSelected_withSingleSelectionEnabled_doesNotNotifiesDelegatesWithEmptySelection() {
+        var answer = [String]()
+        var callbackCount = 0
+        let sut = makeSUT(options: ["A1", "A2"]) { ans in
+            answer = ans
+            callbackCount += 1
+        }
+        sut.tableView.select(row: 0)
+        XCTAssertEqual(answer, ["A1"])
+        
+        sut.tableView.deSelect(row: 0)
+        XCTAssertEqual(answer, ["A1"])
+        
+        XCTAssertEqual(callbackCount, 1)
+    }
     
     func test_optionSelected_withMultipleSelectionEnabled_notifiesDelegatesSelection() {
         var answer = [String]()
         let sut = makeSUT(options: ["A1", "A2"]) { ans in
             answer = ans
         }
+        sut.tableView.allowsMultipleSelection = true
         sut.tableView.select(row: 0)
         XCTAssertEqual(answer, ["A1"])
         
@@ -42,6 +58,7 @@ class QuizViewControllerTests: XCTestCase {
         let sut = makeSUT(options: ["A1", "A2"]) { ans in
             answer = ans
         }
+        sut.tableView.allowsMultipleSelection = true
         sut.tableView.select(row: 0)
         XCTAssertEqual(answer, ["A1"])
         
@@ -56,28 +73,5 @@ class QuizViewControllerTests: XCTestCase {
         let sut = QuestionViewController(question: question, options: options, selection: selection)
         _ = sut.view
         return sut
-    }
-}
-
-
-private extension UITableView {
-    func cell(at index: Int) -> UITableViewCell? {
-        dataSource?.tableView(self, cellForRowAt: IndexPath(row: index, section: 0))
-    }
-    
-    func title(at row: Int) -> String? {
-        cell(at: row)?.textLabel?.text
-    }
-    
-    func select(row: Int) {
-        let indexPath = IndexPath(row: row, section: 0)
-        self.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-        self.delegate?.tableView?(self, didSelectRowAt: indexPath)
-    }
-    
-    func deSelect(row: Int) {
-        let indexPath = IndexPath(row: row, section: 0)
-        self.deselectRow(at: indexPath, animated: false)
-        self.delegate?.tableView?(self, didDeselectRowAt: indexPath)
     }
 }

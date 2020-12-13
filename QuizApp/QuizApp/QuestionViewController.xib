@@ -20,14 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ll-T3-bus">
-                    <rect key="frame" x="186.5" y="64" width="41.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nPL-m0-4nH">
-                    <rect key="frame" x="8" y="92.5" width="398" height="761.5"/>
+                    <rect key="frame" x="8" y="52" width="398" height="802"/>
+                    <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4ll-T3-bus">
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Rpr-43-Ekg"/>
                         <outlet property="delegate" destination="-1" id="6k3-gS-kui"/>
@@ -37,14 +38,13 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="4ll-T3-bus" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="N7R-2n-szh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nPL-m0-4nH" secondAttribute="bottom" constant="8" id="NS4-8V-Lw3"/>
+                <constraint firstItem="nPL-m0-4nH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Zjy-MB-HAk"/>
                 <constraint firstItem="nPL-m0-4nH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="gRI-96-7Nl"/>
-                <constraint firstItem="4ll-T3-bus" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="m3g-a8-aAH"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nPL-m0-4nH" secondAttribute="trailing" constant="8" id="nFc-xw-kz8"/>
-                <constraint firstItem="nPL-m0-4nH" firstAttribute="top" secondItem="4ll-T3-bus" secondAttribute="bottom" constant="8" id="zUd-pT-NZb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nPL-m0-4nH" secondAttribute="bottom" constant="8" id="uQh-3m-DyY"/>
             </constraints>
-            <point key="canvasLocation" x="433" y="82"/>
+            <point key="canvasLocation" x="431.8840579710145" y="81.696428571428569"/>
         </view>
     </objects>
     <resources>
