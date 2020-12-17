@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0869631258B37C700FBC034 /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0869630258B37C700FBC034 /* WrongAnswerCell.xib */; };
 		E0883F972586053900D1CFF7 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883F962586053900D1CFF7 /* ResultsViewControllerTest.swift */; };
 		E0883F9C258605C200D1CFF7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883F9B258605C200D1CFF7 /* ResultViewController.swift */; };
 		E0883FA4258606A300D1CFF7 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0883FA3258606A300D1CFF7 /* ResultViewController.xib */; };
 		E0883FB12586389800D1CFF7 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883FB02586389800D1CFF7 /* TableViewHelpers.swift */; };
+		E0883FC925865D2500D1CFF7 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0883FBE2586434500D1CFF7 /* CorrectAnswerCell.xib */; };
 		E08FC3BB257CC2FC00C7AE7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FC3BA257CC2FC00C7AE7B /* AppDelegate.swift */; };
 		E08FC3BD257CC2FC00C7AE7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FC3BC257CC2FC00C7AE7B /* SceneDelegate.swift */; };
 		E08FC3C4257CC30800C7AE7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08FC3C3257CC30800C7AE7B /* Assets.xcassets */; };
@@ -39,10 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0869630258B37C700FBC034 /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
 		E0883F962586053900D1CFF7 /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		E0883F9B258605C200D1CFF7 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = ../../../../../ResultViewController.swift; sourceTree = "<group>"; };
 		E0883FA3258606A300D1CFF7 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		E0883FB02586389800D1CFF7 /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
+		E0883FBE2586434500D1CFF7 /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		E08FC3B7257CC2FC00C7AE7B /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08FC3BA257CC2FC00C7AE7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E08FC3BC257CC2FC00C7AE7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		E08FC3B9257CC2FC00C7AE7B /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				E0869630258B37C700FBC034 /* WrongAnswerCell.xib */,
 				E08FC3BA257CC2FC00C7AE7B /* AppDelegate.swift */,
 				E08FC3BC257CC2FC00C7AE7B /* SceneDelegate.swift */,
 				E08FC3F3257CFF0100C7AE7B /* QuestionViewController.swift */,
@@ -116,6 +121,7 @@
 				E08FC3C5257CC30800C7AE7B /* LaunchScreen.storyboard */,
 				E08FC3C8257CC30800C7AE7B /* Info.plist */,
 				E08FC3FB257D00F800C7AE7B /* QuestionViewController.xib */,
+				E0883FBE2586434500D1CFF7 /* CorrectAnswerCell.xib */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -244,8 +250,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08FC3C7257CC30800C7AE7B /* LaunchScreen.storyboard in Resources */,
+				E0869631258B37C700FBC034 /* WrongAnswerCell.xib in Resources */,
 				E08FC3C4257CC30800C7AE7B /* Assets.xcassets in Resources */,
 				E08FC3FC257D00F800C7AE7B /* QuestionViewController.xib in Resources */,
+				E0883FC925865D2500D1CFF7 /* CorrectAnswerCell.xib in Resources */,
 				E0883FA4258606A300D1CFF7 /* ResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
