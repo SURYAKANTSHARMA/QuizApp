@@ -22,8 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print(selections)
         })
         _ = questionVC.view
+        let resultVC = ResultViewController(summary: "You get 1/2 correct", answers:
+                                                [PresentableAnswer(question: "Question dfsasdfasd fdsfadsfsdafdsafdsfds", answer: "Yea!", wrongAnswer: nil),
+                                                 PresentableAnswer(question: "Another Question", answer: "ah Yea!", wrongAnswer: "Hell no")        ])
        // questionVC.tableView.allowsMultipleSelection = true
-        window.rootViewController = questionVC
+        window.rootViewController = resultVC
         
         self.window = window
         window.makeKeyAndVisible()

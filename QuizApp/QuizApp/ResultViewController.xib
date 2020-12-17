@@ -26,19 +26,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ka-BD-J12">
-                    <rect key="frame" x="87" y="121" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ka-BD-J12">
+                    <rect key="frame" x="20" y="89" width="374" height="753"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jAs-BZ-0O1"/>
+                        <outlet property="delegate" destination="-1" id="Kca-px-Wqv"/>
                     </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="4ka-BD-J12" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="HzY-SJ-RqJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4ka-BD-J12" secondAttribute="trailing" constant="20" id="JtW-KW-UwR"/>
                 <constraint firstItem="k11-hx-3fD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="iQC-py-fVY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4ka-BD-J12" secondAttribute="bottom" constant="20" id="n3F-dh-HDV"/>
+                <constraint firstItem="4ka-BD-J12" firstAttribute="top" secondItem="k11-hx-3fD" secondAttribute="bottom" constant="8" symbolic="YES" id="wLQ-jM-92K"/>
                 <constraint firstItem="k11-hx-3fD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zXG-l1-DAg"/>
             </constraints>
             <point key="canvasLocation" x="771" y="-478"/>
