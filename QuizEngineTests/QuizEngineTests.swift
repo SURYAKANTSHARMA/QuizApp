@@ -11,7 +11,7 @@ import XCTest
 class QuizFlowTests: XCTestCase {
     let router = RouterSpy()
     
-    func makeSUT(questions: [String]) -> Flow {
+    func makeSUT(questions: [String]) -> Flow<String, String, RouterSpy> {
         Flow(questions: questions, router: router)
     }
     
@@ -102,7 +102,7 @@ class QuizFlowTests: XCTestCase {
     class RouterSpy: Router {
         
         var routedQuestions: [String] = []
-        var answerCallback: Router.AnswerCallback = { _ in }
+        var answerCallback: (String) -> Void = { _ in }
         var result: [String: String]? = nil
         
         func routeTo(question: String, answerCallback:  @escaping (String)-> Void) {
