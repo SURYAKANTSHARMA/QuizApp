@@ -11,9 +11,6 @@ import XCTest
 class QuizFlowTests: XCTestCase {
     let router = RouterSpy()
     
-    func makeSUT(questions: [String]) -> Flow<String, String, RouterSpy> {
-        Flow(questions: questions, router: router)
-    }
     
     func test_start_withNoQuestion() {
         
@@ -74,7 +71,7 @@ class QuizFlowTests: XCTestCase {
     func test_start_withNoQestion_routeResult() {
         let sut = makeSUT(questions: [])
         sut.start()
-        XCTAssertEqual(router.result, [:])
+        XCTAssertEqual(router.result?.answers, [:])
     }
     
     
@@ -82,7 +79,7 @@ class QuizFlowTests: XCTestCase {
         let sut = makeSUT(questions: ["Q1"])
         sut.start()
         router.answerCallback("A1")
-        XCTAssertEqual(router.result, ["Q1": "A1"])
+        XCTAssertEqual(router.result?.answers, ["Q1": "A1"])
     }
     
     func test_start_withTwoQestion_routeResult() {
@@ -90,8 +87,9 @@ class QuizFlowTests: XCTestCase {
         sut.start()
         router.answerCallback("A1")
         router.answerCallback("A2")
-        XCTAssertEqual(router.result, ["Q1": "A1", "Q2": "A2"])
+        XCTAssertEqual(router.result?.answers, ["Q1": "A1", "Q2": "A2"])
     }
+    
     func test_start_withTwoQestion_answerOneQuestion_doesNotRouteResult() {
         let sut = makeSUT(questions: ["Q1", "Q2"])
         sut.start()
@@ -99,19 +97,21 @@ class QuizFlowTests: XCTestCase {
         XCTAssertNil(router.result)
     }
     
-    class RouterSpy: Router {
-        
-        var routedQuestions: [String] = []
-        var answerCallback: (String) -> Void = { _ in }
-        var result: [String: String]? = nil
-        
-        func routeTo(question: String, answerCallback:  @escaping (String)-> Void) {
-            routedQuestions.append(question)
-            self.answerCallback = answerCallback
+    func test_start_withTwoQestion_scoresTheRightAnswer() {
+        var answerSink: [String: String]?
+        let sut = makeSUT(questions: ["Q1", "Q2"]) { answers in
+             answerSink = answers
+             return 10
         }
-        
-        func routeTo(result: [String : String]) {
-            self.result = result
-        }
+        sut.start()
+        router.answerCallback("A1")
+        router.answerCallback("A2")
+        XCTAssertEqual(answerSink, ["Q1": "A1", "Q2": "A2"])
+        XCTAssertEqual(router.result!.score, 10)
+    }
+    
+    // MARK:- Helpers
+    func makeSUT(questions: [String], scoring: @escaping ([String: String]) -> Int = {_ in return 0 }) -> Flow<String, String, RouterSpy> {
+        Flow(questions: questions, router: router, scoring: scoring)
     }
 }
