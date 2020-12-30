@@ -12,6 +12,8 @@ import QuizEngine
 // Creation pattern which return dynamic object based upon arguments
 protocol ViewControllerFactory {
     func questionViewController(for question: Question<String>, answer: @escaping (String) -> Void) -> UIViewController
+    
+    func resultViewController(for result: Result<Question<String>, String>) -> UIViewController
 }
 
 class NavigationControllerRouter: Router {
@@ -24,11 +26,14 @@ class NavigationControllerRouter: Router {
     }
     
     func routeTo(question: Question<String>, answerCallback: @escaping (String) -> Void) {
-        let questionVC = factory.questionViewController(for: question, answer: answerCallback)
-        navigationController.pushViewController(questionVC, animated: true)
+       show(factory.questionViewController(for: question, answer: answerCallback))
     }
     
     func routeTo(result: Result<Question<String>, String>) {
-        
+       show(factory.resultViewController(for: result))
+    }
+    
+    private func show(_ viewController: UIViewController) {
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
