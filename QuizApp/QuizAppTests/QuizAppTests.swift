@@ -70,7 +70,14 @@ class QuizViewControllerTests: XCTestCase {
     
     //MARK:- Helper
     func makeSUT(question: Question<String> = Question.singleAnswer(""), options: [String] = [], selection: @escaping ([String]) -> Void = { _ in }) -> QuestionViewController {
-        let sut = QuestionViewController(question: question, options: options, selection: selection)
+        var sut: QuestionViewController!
+        switch question {
+        case .singleAnswer(let value):
+            sut = QuestionViewController(question: value, options: options, selection: selection)
+        case .multipleAnswer(let value):
+            sut = QuestionViewController(question: value, options: options, selection: selection)
+            sut.tableView.allowsSelection = true
+        }
         _ = sut.view
         return sut
     }
