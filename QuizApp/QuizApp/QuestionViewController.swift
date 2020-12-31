@@ -10,14 +10,15 @@ import UIKit
 
 class QuestionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    private var question = ""
-    private var options = [String]()
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     private let reuseIdentifier = "Cell"
     private var selection: (([String]) -> Void)? = nil
+    private(set) var question: Question<String> = Question<String>.singleAnswer("")
+    private(set) var options = [String]()
     
-    convenience init(question: String, options: [String], selection: @escaping ([String]) -> Void) {
+    convenience init(question: Question<String>, options: [String], selection: @escaping ([String]) -> Void) {
         self.init()
         self.question = question
         self.options = options
@@ -27,7 +28,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        headerLabel.text = question
+        headerLabel.text = question.descriptionText
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

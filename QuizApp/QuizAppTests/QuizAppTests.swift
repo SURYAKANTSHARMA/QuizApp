@@ -11,17 +11,17 @@ import XCTest
 class QuizViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_rendersQuestionHeaderText() {
-        XCTAssertEqual(makeSUT(question: "Q1").headerLabel.text, "Q1")
+        XCTAssertEqual(makeSUT(question: Question.singleAnswer("Q1")).headerLabel.text, "Q1")
     }
     
     func test_viewDidLoad_willRenderNoOption_withOneOptions() {
-        XCTAssertEqual(makeSUT(question: "Q1", options: []).tableView.numberOfRows(inSection: 0), 0)
-        XCTAssertEqual(makeSUT(question: "Q1", options: ["A1"]).tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(makeSUT(question: Question.singleAnswer("Q1"), options: []).tableView.numberOfRows(inSection: 0), 0)
+        XCTAssertEqual(makeSUT(question: Question.singleAnswer("Q1"), options: ["A1"]).tableView.numberOfRows(inSection: 0), 1)
     }
     
     func test_viewDidLoad_withOneOption_renderOneOptionText() {
-        XCTAssertEqual(makeSUT(question: "Q1", options: ["A1", "A2"]).tableView.title(at: 0), "A1")
-        XCTAssertEqual(makeSUT(question: "Q1", options: ["A1", "A2"]).tableView.title(at: 1), "A2")
+        XCTAssertEqual(makeSUT(question: Question.singleAnswer("Q1"), options: ["A1", "A2"]).tableView.title(at: 0), "A1")
+        XCTAssertEqual(makeSUT(question: Question.singleAnswer("Q1"), options: ["A1", "A2"]).tableView.title(at: 1), "A2")
     }
     
     func test_optionSelected_withSingleSelectionEnabled_doesNotNotifiesDelegatesWithEmptySelection() {
@@ -69,7 +69,7 @@ class QuizViewControllerTests: XCTestCase {
     }
     
     //MARK:- Helper
-    func makeSUT(question: String = "", options: [String] = [], selection: @escaping ([String]) -> Void = { _ in }) -> QuestionViewController {
+    func makeSUT(question: Question<String> = Question.singleAnswer(""), options: [String] = [], selection: @escaping ([String]) -> Void = { _ in }) -> QuestionViewController {
         let sut = QuestionViewController(question: question, options: options, selection: selection)
         _ = sut.view
         return sut
