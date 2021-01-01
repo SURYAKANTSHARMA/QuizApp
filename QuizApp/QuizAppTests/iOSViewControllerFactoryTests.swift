@@ -10,7 +10,20 @@ import XCTest
 @testable import QuizApp
 
 class iOSViewControllerFactoryTests: XCTestCase {
+    
     let options = ["A1", "A2"]
+    let singleAnswerQuestion = Question.singleAnswer("Q1")
+    let multipleAnswerQuestion = Question.multipleAnswer("Q1")
+    
+    func test_questionViewController_createControllerWithTitle() {
+        let presenter = QuestionPresenter(questions: [singleAnswerQuestion], question: singleAnswerQuestion)
+        XCTAssertEqual(presenter.title, "Question #1")
+    }
+    
+    func test_multipleQuestionViewController_SecondControllerWithTitle() {
+        let presenter = QuestionPresenter(questions: [singleAnswerQuestion, multipleAnswerQuestion], question: multipleAnswerQuestion)
+        XCTAssertEqual(presenter.title, "Question #2")
+    }
     
     func test_questionViewController_createControllerWithQuestion_withSingleAnswer() {
         XCTAssertNotNil(makeQuestionViewController())
@@ -29,8 +42,7 @@ class iOSViewControllerFactoryTests: XCTestCase {
     }
    
     func test_questionViewController_createControlleWithOptions_multipleSelection() {
-     
-        let controller = makeQuestionViewController(question: .multipleAnswer("multiple answer question"))
+        let controller = makeQuestionViewController(question: multipleAnswerQuestion)
         _ = controller.view
         
         XCTAssertTrue(controller.tableView.allowsMultipleSelection)
@@ -39,17 +51,15 @@ class iOSViewControllerFactoryTests: XCTestCase {
     // MARK: Helpers
     
     func makeSUT() -> iOSViewControllerFactory {
-        let question = Question.singleAnswer("Q1")
-        let multipleAnswerQuestion = Question.multipleAnswer("multiple answer question")
         let options = ["A1", "A2"]
-        let sut = iOSViewControllerFactory(options: [question: options,
+        let sut = iOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: [singleAnswerQuestion: options,
                                                      multipleAnswerQuestion: options])
         
         return sut
     }
     
     func makeQuestionViewController(question: Question<String> = Question.singleAnswer("Q1")) -> QuestionViewController {
-        makeSUT() .questionViewController(for: question) { answer in
+        makeSUT().questionViewController(for: question) { answer in
             
         } as! QuestionViewController
     }
