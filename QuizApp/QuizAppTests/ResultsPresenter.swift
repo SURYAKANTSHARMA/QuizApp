@@ -11,6 +11,7 @@ import QuizEngine
 struct ResultsPresenter {
     
     let result: Result<Question<String>, [String]>
+    let orderQuestion: [Question<String>]
     let correctAnswers: [Question<String>: [String]]
     
     var summary: String {
@@ -18,8 +19,8 @@ struct ResultsPresenter {
     }
     
     var presentableAnswers: [PresentableAnswer] {
-        result.answers.map { question, userAnswer in
-            guard let correctAnswer = correctAnswers[question] else {
+        orderQuestion.map { question in
+            guard let correctAnswer = correctAnswers[question], let userAnswer = result.answers[question] else {
                 fatalError("Couldn't find correct answer for question: \(question)")
             }
             
