@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import QuizEngine
+
 @testable import QuizApp
 
 class QuizViewControllerTests: XCTestCase {

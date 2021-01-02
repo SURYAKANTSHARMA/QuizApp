@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
+import QuizEngine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var game: Game<Question<String>,[String], NavigationControllerRouter>?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,19 +20,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let questionVC = QuestionViewController(question: "Question 1", options: ["Option1", "Option2"], allowMultipleSelection: false, selection: { selections in
-            print(selections)
-        })
-        _ = questionVC.view
-        let resultVC = ResultViewController(summary: "You get 1/2 correct", answers:
-                                                [PresentableAnswer(question: "Question dfsasdfasd fdsfadsfsdafdsafdsfds", answer: "Yea!", wrongAnswer: nil),
-                                                 PresentableAnswer(question: "Another Question", answer: "ah Yea!", wrongAnswer: "Hell no")        ])
-       // questionVC.tableView.allowsMultipleSelection = true
-        window.rootViewController = resultVC
+        let question1 = Question.singleAnswer("What is nationality of surya")
+        let question2 = Question.singleAnswer("What are surya's favourite food")
+        let questions = [question1, question2]
+        
+        let option1 = "Indian"
+        let option2 = "American"
+        let option3 = "Greek"
+        
+        let option4 = "Matar Paneer"
+        let option5 = "Kadi"
+        let option6 = "Alu parantha"
+        
+        let options1 = [option1, option2, option3]
+        let options2 = [option4, option5, option6]
+        
+        let navigationController = UINavigationController()
+        let correctAnswer = [question1: [option1], question2: [option4, option6]]
+        
+        let iOSFactory = iOSViewControllerFactory(questions: questions, options: [question1: options1, question2: options2], correctAnswer: correctAnswer)
+        let router = NavigationControllerRouter(navigationController: navigationController, factory: iOSFactory)
         
         self.window = window
-        window.makeKeyAndVisible()
+        window.rootViewController = navigationController
+        self.game = startGame(questions: questions, router: router, correctAnswer: correctAnswer)
         
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

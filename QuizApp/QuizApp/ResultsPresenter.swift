@@ -13,7 +13,9 @@ struct ResultsPresenter {
     let result: Result<Question<String>, [String]>
     let orderQuestion: [Question<String>]
     let correctAnswers: [Question<String>: [String]]
-    
+    var title: String {
+        return "Result"
+    }
     var summary: String {
         "You got \(result.score)/\(result.answers.count) correct"
     }
