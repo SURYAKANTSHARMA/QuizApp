@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "iOSViewControllerFactory"
-            landmarkType = "3">
+            landmarkName = "resultViewController(for:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -34,68 +34,6 @@
             endingLineNumber = "15"
             landmarkName = "NavigationControllerRouterTests"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "D2582D18-8C25-4AA1-9EC1-2C5C19CF0C39 - 1a8329b6cb0c6e59"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.navigationController.getter : QuizAppTests.NoAnimatedNavigationController"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "D2582D18-8C25-4AA1-9EC1-2C5C19CF0C39 - 9d63980e7b72db89"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  uuid = "D2582D18-8C25-4AA1-9EC1-2C5C19CF0C39 - f48261e3b3486b59"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.init(selector: ObjectiveC.Selector) -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  uuid = "D2582D18-8C25-4AA1-9EC1-2C5C19CF0C39 - e06714ccdc39ea87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.init() -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "109">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,113 +50,6 @@
             endingLineNumber = "12"
             landmarkName = "unknown"
             landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "7FD1E143-EA2C-460C-BC89-78D30A71DB1F - 1b32f2addf03609c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.__deallocating_deinit"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "7FD1E143-EA2C-460C-BC89-78D30A71DB1F - ac534a5caa083e4f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.__allocating_init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "7FD1E143-EA2C-460C-BC89-78D30A71DB1F - 9d63980e7b72db89"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  uuid = "7FD1E143-EA2C-460C-BC89-78D30A71DB1F - 869ffabf1bc2fa00"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.__allocating_init(selector: ObjectiveC.Selector) -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "7FD1E143-EA2C-460C-BC89-78D30A71DB1F - f48261e3b3486b59"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.init(selector: ObjectiveC.Selector) -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  uuid = "7FD1E143-EA2C-460C-BC89-78D30A71DB1F - 3bdb140a34356afc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.__allocating_init() -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "7FD1E143-EA2C-460C-BC89-78D30A71DB1F - e06714ccdc39ea87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationControllerRouterTests.init() -&gt; QuizAppTests.NavigationControllerRouterTests"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suryakantsharma/Documents/GitHub/QuizApp/QuizApp/QuizAppTests/NavigationControllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "109">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
