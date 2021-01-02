@@ -17,18 +17,22 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     private var selection: (([String]) -> Void)? = nil
     private(set) var question: String = ""
     private(set) var options = [String]()
+    private(set) var allowMultipleSelection = false
     
-    convenience init(question: String, options: [String], selection: @escaping ([String]) -> Void) {
+    convenience init(question: String, options: [String], allowMultipleSelection: Bool,
+                     selection: @escaping ([String]) -> Void) {
         self.init()
         self.question = question
         self.options = options
         self.selection = selection
+        self.allowMultipleSelection = allowMultipleSelection
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         headerLabel.text = question
+        tableView.allowsMultipleSelection = allowMultipleSelection
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

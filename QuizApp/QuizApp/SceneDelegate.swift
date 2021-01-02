@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let questionVC = QuestionViewController(question: "Question 1", options: ["Option1", "Option2"], selection: { selections in
+        let questionVC = QuestionViewController(question: "Question 1", options: ["Option1", "Option2"], allowMultipleSelection: false, selection: { selections in
             print(selections)
         })
         _ = questionVC.view
